@@ -200,4 +200,45 @@ class CMRequest: NSObject {
         
         cmHideLoading()
     }
+    
+    public enum PXFError: Error {
+        case deserialize_Error(String?)
+    }
+    
+//    getBaseParamters(paramters, requestCode: requestApi)
+    func sendNetworkRequest<T:HandyJSON>(_ paramters: [String : String],requestApi:String,finished:@escaping (_ responseModel: T,_ error: Error?)->()){
+        
+        Alamofire.request(url, method: .post, parameters: paramters).responseString { response in
+            
+            if response.result.isSuccess{
+                
+                if let responseObject = T.deserialize(from: response.result.value) {
+                    finished(responseObject,nil)
+                }else{
+                    finished(T(),PXFError.deserialize_Error(response.result.value))
+                }
+                
+            }else{
+                finished(T(),response.result.error)
+            }
+            
+        }
+    }
+    
+//    @objc func requestUpdate(){
+//        var paramters = [String : String]()
+//        paramters["current_version_num"] = APP_VERSION_CODE
+//
+//        NetworkTool.sharedInstance.sendNetworkRequest(paramters, requestApi: VERSION_UPDATE_API) { (updateInfo:UpdateInfo, error) in
+//
+//            if error == nil{
+//                ALinLog(error)
+//            }else{
+//                ALinLog(updateInfo)
+//            }
+//        }
+//    }
+    
 }
+
+
