@@ -20,7 +20,6 @@
 
 // 短信验证
 #import <SMS_SDK/SMSSDK.h>
-#import <SMS_SDK/Extend/SMSSDK+AddressBookMethods.h>
 
 // umeng
 #import "UMessage.h"

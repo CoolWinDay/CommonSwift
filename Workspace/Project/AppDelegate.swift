@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         IQKeyboardManager.sharedManager().enable = true
         
         // 短信验证码
-        SMSSDK.registerApp("173f87709381d", withSecret: "69988802391e4d4be0214cbfd1dc7299")
-        SMSSDK.enableAppContactFriends(false)
+//        SMSSDK.registerApp("173f87709381d", withSecret: "69988802391e4d4be0214cbfd1dc7299")
+//        SMSSDK.enableAppContactFriends(false)
         
         // 友盟分享
         UMSocialManager.default().openLog(true)

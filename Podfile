@@ -21,8 +21,6 @@ target 'CommonSwift' do
     # 集成新浪微博(精简版1M)
     pod 'UMengUShare/Social/ReducedSina'
     
-    # Mob产品公共库
-    pod 'MOBFoundation_IDFA'
     # SMSSDK必须
     pod 'SMSSDK'
     

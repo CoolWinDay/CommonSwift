@@ -40,50 +40,50 @@ class LoginVC: CMBaseVC {
     
     @IBAction
     func getCodeBtnClick() {
-        self.view.endEditing(true)
-        let phoneNumber = self.numText.text!.trimSpace()
-        if phoneNumber.isEmpty {
-            cmShowToast("请输入手机号")
-            return
-        }
-        
-        if self.timer == nil {
-            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(resetGetCodeBtn), userInfo: nil, repeats: true)
-        }
-        
-        self.tileNumLab.text = "\(flag)"
-        self.tileNumLab.isHidden = false
-        
-        SMSSDK.getVerificationCode(by: SMSGetCodeMethodSMS, phoneNumber: phoneNumber, zone: "+86", customIdentifier: nil) { (error) in
-            if error == nil {
-                cmShowToast("验证码已发送")
-            }
-            else {
-                cmShowToast(error?.localizedDescription)
-                self.getCodeBtn.isEnabled = true
-                self.tileNumLab.isHidden = true
-                self.timer?.invalidate()
-            }
-        }
+//        self.view.endEditing(true)
+//        let phoneNumber = self.numText.text!.trimSpace()
+//        if phoneNumber.isEmpty {
+//            cmShowToast("请输入手机号")
+//            return
+//        }
+//
+//        if self.timer == nil {
+//            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(resetGetCodeBtn), userInfo: nil, repeats: true)
+//        }
+//
+//        self.tileNumLab.text = "\(flag)"
+//        self.tileNumLab.isHidden = false
+//
+//        SMSSDK.getVerificationCode(by: SMSGetCodeMethodSMS, phoneNumber: phoneNumber, zone: "+86", customIdentifier: nil) { (error) in
+//            if error == nil {
+//                cmShowToast("验证码已发送")
+//            }
+//            else {
+//                cmShowToast(error?.localizedDescription)
+//                self.getCodeBtn.isEnabled = true
+//                self.tileNumLab.isHidden = true
+//                self.timer?.invalidate()
+//            }
+//        }
         
     }
     
     @IBAction
     func registerBtnClick() {
-        let phoneNumber = self.numText.text!.trimSpace()
-        let codeNum = self.codeText.text!.trimSpace()
-        if codeNum.isEmpty {
-            cmShowToast("请输入验证码")
-            return
-        }
-        SMSSDK.commitVerificationCode(codeNum, phoneNumber: phoneNumber, zone: "+86") { (userInfo, error) in
-            if error == nil {
-                cmShowToast("验证成功")
-            }
-            else {
-                cmShowToast(error?.localizedDescription)
-            }
-        }
+//        let phoneNumber = self.numText.text!.trimSpace()
+//        let codeNum = self.codeText.text!.trimSpace()
+//        if codeNum.isEmpty {
+//            cmShowToast("请输入验证码")
+//            return
+//        }
+//        SMSSDK.commitVerificationCode(codeNum, phoneNumber: phoneNumber, zone: "+86") { (userInfo, error) in
+//            if error == nil {
+//                cmShowToast("验证成功")
+//            }
+//            else {
+//                cmShowToast(error?.localizedDescription)
+//            }
+//        }
     }
     
     func resetGetCodeBtn() {

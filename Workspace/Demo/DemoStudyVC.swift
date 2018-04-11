@@ -28,15 +28,15 @@ class DemoStudyVC: CMBaseVC, UITableViewDelegate, UITableViewDataSource {
         
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         
-        self.tableView.es_addPullToRefresh {
+        self.tableView.es.addPullToRefresh {
             sleep(2)
-            self.tableView.es_stopPullToRefresh()
+            self.tableView.es.stopPullToRefresh()
         }
         
-        self.tableView.es_addInfiniteScrolling {
+        self.tableView.es.addInfiniteScrolling {
             sleep(2)
-            self.tableView.es_stopLoadingMore()
-            self.tableView.es_noticeNoMoreData()
+            self.tableView.es.stopLoadingMore()
+            self.tableView.es.noticeNoMoreData()
         }
         
         self.tableView.tableFooterView = UIView()
