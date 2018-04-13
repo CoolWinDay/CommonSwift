@@ -9,6 +9,8 @@
 import UIKit
 import SwiftyJSON
 import SwiftDate
+import Moya
+import Alamofire
 
 class DemoHomeVC: CMBaseVC {
     
@@ -33,11 +35,24 @@ class DemoHomeVC: CMBaseVC {
     @IBAction
     func btnPredded() {
         
-        let date = "2014-09-03".date(format: DateFormat.custom("yyyy-MM-dd"))?.absoluteDate
-        if let date = date {
-            let string = date.string(format: DateFormat.custom("yyyy-MM-dd"))
-            let month = date.month
-        }
+//        ForumService.forumList { (forumList) in
+//
+//        }
+        
+//        let url = "http://www.pingpangwang.com/mobcent/app/web/index.php?r=forum/forumlist"
+//        Alamofire.request(url).responseData(completionHandler: { (response) in
+//            let json = JSON(data: response.result.value!)
+//            print(json)
+//
+//            let modelList = [PP_ForumModel].deserialize(from: json.rawString(), designatedPath: "list")
+//        })
+        
+        
+//        let date = "2014-09-03".date(format: DateFormat.custom("yyyy-MM-dd"))?.absoluteDate
+//        if let date = date {
+//            let string = date.string(format: DateFormat.custom("yyyy-MM-dd"))
+//            let month = date.month
+//        }
         
 //        cmSetUserDefaults(string: "aaa", forKey: "testKey")
 //        let testValue = cmGetUserDefaultsString(forKey: "testKey")
@@ -64,11 +79,11 @@ class DemoHomeVC: CMBaseVC {
 //        webVC.webUrl = "https://www.baidu.com"
 //        cmPushViewController(webVC)
         
-        cmPushViewController("CMWebVC") { (vc) in
-            vc.title = "WebView"
-            if let vcInstance = vc as? CMWebVC {
-                vcInstance.webUrl = "https://www.baidu.com"
-            }
-        }
+//        cmPushViewController("CMWebVC") { (vc) in
+//            vc.title = "WebView"
+//            if let vcInstance = vc as? CMWebVC {
+//                vcInstance.webUrl = "https://www.baidu.com"
+//            }
+//        }
     }
 }

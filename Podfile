@@ -2,8 +2,8 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'CommonSwift' do
-    pod 'Alamofire', '~> 4.3'
-    pod 'EVReflection/Alamofire'
+    pod 'Alamofire', '~> 4.6.0'
+    pod 'Moya/RxSwift', '~> 11.0'
     pod 'SwiftyJSON', '~> 3.1.4'
     pod 'HandyJSON', '~> 1.6.0'
     pod 'SnapKit', '~> 3.1.2'

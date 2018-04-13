@@ -11,6 +11,9 @@
 		37679FFB1E9C5F8E00FE0D49 /* ImagePickerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37679FF91E9C5F8E00FE0D49 /* ImagePickerVC.xib */; };
 		37679FFD1E9C6C0B00FE0D49 /* CMUIImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37679FFC1E9C6C0B00FE0D49 /* CMUIImageUtils.swift */; };
 		6141E9421E63C968002CB071 /* CMStringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6141E9411E63C968002CB071 /* CMStringUtils.swift */; };
+		783CEC4D208043D1008AB8BD /* ForumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783CEC4C208043D1008AB8BD /* ForumService.swift */; };
+		783CEC4F20804F38008AB8BD /* PP_ForumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783CEC4E20804F38008AB8BD /* PP_ForumModel.swift */; };
+		786706C4207F449F0079CD44 /* Moya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786706C3207F449F0079CD44 /* Moya.swift */; };
 		CD7A58A754506CB94BC181A3 /* Pods_CommonSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E366658872ED3CDF0A68E47B /* Pods_CommonSwift.framework */; };
 		E817F86A1D8054D000D2DD07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E817F85C1D8054D000D2DD07 /* Assets.xcassets */; };
 		E82946C51E5EAE0B00D62A86 /* DemoHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E82946C41E5EAE0B00D62A86 /* DemoHomeVC.xib */; };
@@ -144,6 +147,9 @@
 		60DB0349C114059DFC586EC2 /* Pods-CommonSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommonSwift/Pods-CommonSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		6141E9411E63C968002CB071 /* CMStringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMStringUtils.swift; sourceTree = "<group>"; };
 		745C7071A6A941B1D4B10374 /* Pods-CommonSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommonSwift/Pods-CommonSwift.release.xcconfig"; sourceTree = "<group>"; };
+		783CEC4C208043D1008AB8BD /* ForumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumService.swift; sourceTree = "<group>"; };
+		783CEC4E20804F38008AB8BD /* PP_ForumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PP_ForumModel.swift; sourceTree = "<group>"; };
+		786706C3207F449F0079CD44 /* Moya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moya.swift; sourceTree = "<group>"; };
 		E366658872ED3CDF0A68E47B /* Pods_CommonSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommonSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E817F85C1D8054D000D2DD07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E82946C41E5EAE0B00D62A86 /* DemoHomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoHomeVC.xib; sourceTree = "<group>"; };
@@ -316,6 +322,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		783CEC4B208043B0008AB8BD /* Forum */ = {
+			isa = PBXGroup;
+			children = (
+				783CEC4C208043D1008AB8BD /* ForumService.swift */,
+				783CEC4E20804F38008AB8BD /* PP_ForumModel.swift */,
+			);
+			path = Forum;
+			sourceTree = "<group>";
+		};
 		80C3E15E444DB9B1E9004A5D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +441,7 @@
 				E82CCEA21EB31EB200A3E379 /* CMRequest.swift */,
 				E82CCEA31EB31EB200A3E379 /* CMResponse.swift */,
 				E8470AC61EBDB42C00D86916 /* CMNetWorkManager.swift */,
+				786706C3207F449F0079CD44 /* Moya.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -569,6 +585,7 @@
 		E87575461E4C561700BFDCB7 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				783CEC4B208043B0008AB8BD /* Forum */,
 				E8735A711E55DCB600D8A910 /* Common */,
 				E82B2B421EAEF7730078F9EF /* Login */,
 				E8F9D7EB1EBF1D0C0005C5E8 /* Setting */,
@@ -922,10 +939,12 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-CommonSwift/Pods-CommonSwift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/EVReflection/EVReflection.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -935,10 +954,12 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESPullToRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EVReflection.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -978,12 +999,14 @@
 				E837C2061EC6C19800E69FAC /* WidgetVC.swift in Sources */,
 				E8F9D7EA1EBF137D0005C5E8 /* CMUserDefaultsUtils.swift in Sources */,
 				E8F9D7EE1EBF1D240005C5E8 /* SettingVC.swift in Sources */,
+				783CEC4F20804F38008AB8BD /* PP_ForumModel.swift in Sources */,
 				37679FFA1E9C5F8E00FE0D49 /* ImagePickerVC.swift in Sources */,
 				E8470AC41EBD844900D86916 /* NotificationVC.swift in Sources */,
 				E8D9903A1E5333F000AFB8F5 /* CMAppDefine.swift in Sources */,
 				E875756D1E4C646A00BFDCB7 /* DemoBusinessVC.swift in Sources */,
 				E839EF4A1E7BC04C006C78B7 /* ImageVC.swift in Sources */,
 				E839EF141E7B9332006C78B7 /* SMSegmentViewConstants.swift in Sources */,
+				786706C4207F449F0079CD44 /* Moya.swift in Sources */,
 				E82CBEDB1E76BF7100DEF744 /* NetWorkingVC.swift in Sources */,
 				E82CCEA91EB31EB200A3E379 /* CMRequest.swift in Sources */,
 				E8F9D7E01EBEF9360005C5E8 /* main.swift in Sources */,
@@ -995,6 +1018,7 @@
 				E87575691E4C638100BFDCB7 /* DemoMeVC.swift in Sources */,
 				E82AC5D71E63D82700621A3A /* CMAppUtils.swift in Sources */,
 				E82E42F91E5A8C4C00679FAE /* DemoStudyVC.swift in Sources */,
+				783CEC4D208043D1008AB8BD /* ForumService.swift in Sources */,
 				E8A19F1D1EBF346C0054C4FD /* CMDateUtils.swift in Sources */,
 				E82CCE9D1EB1DD5300A3E379 /* ShareVC.swift in Sources */,
 				E8470ACA1EBDC14700D86916 /* CMLocationManager.swift in Sources */,
